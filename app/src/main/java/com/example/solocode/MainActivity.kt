@@ -14,6 +14,7 @@ import com.example.solocode.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var quizModelList : MutableList<QuizModel>
+    lateinit var adapter: QuizListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
