@@ -16,6 +16,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/blue"
+        android:padding="8dp"
         android:orientation="vertical">
 
         <TextView
@@ -24,6 +27,7 @@
             android:text="Solocode"
             android:gravity="center"
             android:textSize="34sp"
+            android:textColor="@color/white"
             android:letterSpacing="0.1"
             android:textStyle="bold"/>
 
@@ -32,10 +36,31 @@
             android:layout_height="wrap_content"
             android:text="Enhance your coding skills!"
             android:gravity="center"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:letterSpacing="0.1"
             android:textStyle="bold"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Items"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+    </RelativeLayout>
 
 
 
