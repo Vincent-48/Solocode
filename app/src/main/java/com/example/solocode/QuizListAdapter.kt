@@ -1,5 +1,6 @@
 package com.example.solocode
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,12 @@ class QuizListAdapter(private val quizModelList : List<QuizModel>) :
             //bind all the views
             binding.apply {
                 quizTitleText.text = model.title
+                quizSubtitleText.text = model.subtitle
+                quizTimeText.text = model.time + "min"
+                root.setOnClickListener{
+                    val intent = Intent(root.context,QuizActivity::class.java)
+                    root.context.startActivity(intent)
+                }
             }
         }
 

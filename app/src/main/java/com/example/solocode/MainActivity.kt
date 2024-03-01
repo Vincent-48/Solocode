@@ -9,9 +9,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.solocode.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityMainBinding
     lateinit var quizModelList : MutableList<QuizModel>
     lateinit var adapter: QuizListAdapter
@@ -29,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun setupRecyclerView(){
+        adapter = QuizListAdapter(quizModelList)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
 
     }
     private fun getDataFromFirebase(){
