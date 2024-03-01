@@ -12,15 +12,30 @@ import android.view.MenuItem
 import com.example.solocode.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-
+    lateinit var binding: ActivityMainBinding
+    lateinit var quizModelList : MutableList<QuizModel>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        quizModelList = mutableListOf()
+        getDataFromFirebase()
 
 
 
 
+
+    }
+    private fun setupRecyclerView(){
+
+    }
+    private fun getDataFromFirebase(){
+        //dummy data
+        quizModelList.add(QuizModel("1","Programming","All the basic programming","10"))
+        quizModelList.add(QuizModel("2","Computer","All the basics of computer","20"))
+        quizModelList.add(QuizModel("3","Geography","boost your geography knowledge","15"))
+        setupRecyclerView()
     }
 
 
