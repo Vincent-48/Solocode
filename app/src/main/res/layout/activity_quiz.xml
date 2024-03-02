@@ -20,6 +20,20 @@
             android:textSize="18sp"
             android:layout_centerVertical="true"
             />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/icon_timer"
+            app:tint="@color/blue"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="5:46"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"/>
     </RelativeLayout>
 
 </LinearLayout>
