@@ -38,9 +38,14 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getDataFromFirebase(){
         //dummy data
-        quizModelList.add(QuizModel("1","Programming","All the basic programming","10"))
-        quizModelList.add(QuizModel("2","Computer","All the basics of computer","20"))
-        quizModelList.add(QuizModel("3","Geography","boost your geography knowledge","15"))
+        val listQuestionModel = mutableListOf<QuestionModel>()
+        listQuestionModel.add(QuestionModel("What is android?", mutableListOf("language","OS","Product","None"),"OS"))
+        listQuestionModel.add(QuestionModel("What owns android?", mutableListOf("Apple","Samsung","Google","Microsoft"),"Google"))
+        listQuestionModel.add(QuestionModel("What is assistant does android uses?", mutableListOf("Cortana","Siri","Google Assistant","Alexa"),"Google Assistant"))
+
+        quizModelList.add(QuizModel("1","Programming","All the basic programming","10",listQuestionModel))
+        //quizModelList.add(QuizModel("2","Computer","All the basics of computer","20"))
+       // quizModelList.add(QuizModel("3","Geography","boost your geography knowledge","15"))
         setupRecyclerView()
     }
 

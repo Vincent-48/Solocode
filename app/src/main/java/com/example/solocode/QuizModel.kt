@@ -5,6 +5,14 @@ data class QuizModel(
     var title : String,
     var subtitle : String,
     var time : String,
+    val questionList : List<QuestionModel>
 ){
-    constructor():this("","","","")
+    constructor():this("","","","", emptyList())
+}
+data class QuestionModel(
+    val question : String,
+    val options : List<String>,
+    val correct : String,
+){
+    constructor(): this("", emptyList(),"")
 }

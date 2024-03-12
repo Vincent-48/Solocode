@@ -18,6 +18,7 @@ class QuizListAdapter(private val quizModelList : List<QuizModel>) :
                 quizTimeText.text = model.time + "mins"
                 root.setOnClickListener{
                     val intent = Intent(root.context,QuizActivity::class.java)
+                    QuizActivity.questionModelList = model.questionList
                     root.context.startActivity(intent)
                 }
             }

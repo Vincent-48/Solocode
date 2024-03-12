@@ -28,13 +28,6 @@
             android:layout_toStartOf="@id/timer_indicator_textview"
             android:layout_marginEnd="4dp"
             android:layout_centerVertical="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="5:46"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/blue"/>
 
         <TextView
             android:id="@+id/timer_indicator_textview"
@@ -130,12 +123,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                tools:text="Ans B"
-                android:textColor="@color/black"
+                tools:text="Next"
+                android:textColor="@color/white"
                 android:paddingVertical="12dp"
                 android:gravity="center_vertical"
                 android:layout_gravity="end"
-                android:textSize="18sp"/>
+                android:paddingHorizontal="40dp"
+                android:textSize="20sp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
