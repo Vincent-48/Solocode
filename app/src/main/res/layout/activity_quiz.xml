@@ -95,10 +95,46 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 android:backgroundTint="@color/gray"
-                tools:text="Ans A"
+                tools:text="Ans B"
                 android:textColor="@color/black"
                 android:paddingVertical="12dp"
                 android:gravity="center_vertical"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:backgroundTint="@color/gray"
+                tools:text="Ans C"
+                android:textColor="@color/black"
+                android:paddingVertical="12dp"
+                android:gravity="center_vertical"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:backgroundTint="@color/gray"
+                tools:text="Ans D"
+                android:textColor="@color/black"
+                android:paddingVertical="12dp"
+                android:gravity="center_vertical"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                tools:text="Ans B"
+                android:textColor="@color/black"
+                android:paddingVertical="12dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="end"
                 android:textSize="18sp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
