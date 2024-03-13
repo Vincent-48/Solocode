@@ -76,6 +76,9 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         val clickedBtn = v as Button
         if (clickedBtn.id == R.id.next_btn){
             //nextbtn is clicked
+            if (selectedAnswer == questionModelList[currentQuestionIndex].correct){
+                score++
+            }
             currentQuestionIndex++
             loadQuestions()
         }else{
