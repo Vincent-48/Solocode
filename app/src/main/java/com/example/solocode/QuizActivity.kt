@@ -1,5 +1,6 @@
 package com.example.solocode
 
+import android.app.AlertDialog
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -105,11 +106,11 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             scoreProgressIndicator.progress = percentage
             scoreProgressText.text = "$percentage %"
             if (percentage > 60){
-                scoreDialog.text = "Congrats! You have passed"
-                scoreDialog.setTextColor(Color.BLUE)
+                scoreTitle.text = "Congrats! You have passed"
+                scoreTitle.setTextColor(Color.GREEN)
             }else{
-                scoreDialog.text = "Oops! You have failed"
-                scoreDialog.setTextColor(Color.RED)
+                scoreTitle.text = "Oops! You have failed"
+                scoreTitle.setTextColor(Color.RED)
             }
 
             scoreSubtitle.text = "$score out of $totalQuestions are correct"
@@ -118,5 +119,10 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }
+        AlertDialog.Builder(this)
+            .setView(dialogBinding.root)
+            .setCancelable(false)
+            .show()
+
     }
 }

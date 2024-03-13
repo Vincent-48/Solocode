@@ -9,7 +9,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/score_dialog"
+        android:id="@+id/score_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Congrats! You have passed"
@@ -27,17 +27,18 @@
             android:layout_centerVertical="true"
             app:trackColor="@color/gray"
             tools:progress="60"
-            app:trackCornerRadius="45dp"
+            app:trackCornerRadius="28dp"
             app:trackThickness="5dp"
-            android:indicatorSize="98dp"/>
+            app:indicatorSize="98dp"/>
+
         <TextView
             android:id="@+id/score_progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="50%"
-            android:textSize="18sp"
             android:layout_centerInParent="true"
-            android:textStyle="bold"/>
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="50%" />
 
     </RelativeLayout>
 
@@ -52,10 +53,10 @@
         android:id="@+id/finish_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Finish"
+        android:text="Finish"
         android:textColor="@color/white"
         android:textAllCaps="false"
-        android:layout_margin="8dp"/>
+        android:layout_margin="8dp" />
 
 
 
