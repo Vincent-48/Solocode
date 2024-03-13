@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             app:trackColor="@color/gray"
             tools:progress="60"
-            app:trackCornerRadius="20dp"
+            app:trackCornerRadius="45dp"
             app:trackThickness="5dp"
             android:indicatorSize="98dp"/>
         <TextView
@@ -40,6 +40,23 @@
             android:textStyle="bold"/>
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/score_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="6 out of 10 are correct"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/finish_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Finish"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_margin="8dp"/>
+
 
 
 

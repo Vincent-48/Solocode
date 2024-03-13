@@ -1,5 +1,6 @@
 package com.example.solocode
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -8,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import com.example.solocode.databinding.ActivityMainBinding
 import com.example.solocode.databinding.ActivityQuizBinding
+import com.example.solocode.databinding.ScoreDialogBinding
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener {
     companion object{
@@ -95,6 +97,26 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
     private fun finishQuiz(){
+        val totalQuestions = questionModelList.size
+        val percentage = ((score.toFloat() / totalQuestions.toFloat() )* 100).toInt()
 
+        val dialogBinding = ScoreDialogBinding.inflate(layoutInflater)
+        dialogBinding.apply {
+            scoreProgressIndicator.progress = percentage
+            scoreProgressText.text = "$percentage %"
+            if (percentage > 60){
+                scoreDialog.text = "Congrats! You have passed"
+                scoreDialog.setTextColor(Color.BLUE)
+            }else{
+                scoreDialog.text = "Oops! You have failed"
+                scoreDialog.setTextColor(Color.RED)
+            }
+
+            scoreSubtitle.text = "$score out of $totalQuestions are correct"
+            finishBtn.setOnClickListener {
+                finish()
+            }
+
+        }
     }
 }
