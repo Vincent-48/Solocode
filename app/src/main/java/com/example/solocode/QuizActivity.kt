@@ -3,6 +3,7 @@ package com.example.solocode
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.example.solocode.databinding.ActivityMainBinding
@@ -53,6 +54,11 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun loadQuestions(){
+        selectedAnswer = ""
+        if (currentQuestionIndex == questionModelList.size){
+            finishQuiz()
+            return
+        }
         binding.apply {
             questionIndicatorTextview.text = "Question ${currentQuestionIndex+1}/ ${questionModelList.size}"
             questionProgressIndicator.progress =
@@ -78,6 +84,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             //nextbtn is clicked
             if (selectedAnswer == questionModelList[currentQuestionIndex].correct){
                 score++
+                Log.i("Score of quiz", score.toString())
             }
             currentQuestionIndex++
             loadQuestions()
@@ -86,5 +93,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             clickedBtn.setBackgroundColor(getColor(R.color.orange))
             selectedAnswer = clickedBtn.text.toString()
         }
+    }
+    private fun finishQuiz(){
+
     }
 }
