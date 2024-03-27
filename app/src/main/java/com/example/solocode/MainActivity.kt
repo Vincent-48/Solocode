@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.solocode.databinding.ActivityMainBinding
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +39,16 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getDataFromFirebase(){
         //dummy data
+        FirebaseDatabase.getInstance().reference
+            .get()
+            .addOnSuccessListener {dataSnapshot ->
+                for (snapshot in dataSnapshot.children){
+                    val quizModel = snapshot.getValue(QuizModel::class.java)
+                    if (quizModel != null) {
+                        quizModelList.add(quizModel)
+                    }
+                }
+            }
 
         setupRecyclerView()
     }
