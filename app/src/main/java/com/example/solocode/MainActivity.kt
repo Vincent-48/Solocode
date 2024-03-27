@@ -42,15 +42,19 @@ class MainActivity : AppCompatActivity() {
         FirebaseDatabase.getInstance().reference
             .get()
             .addOnSuccessListener {dataSnapshot ->
-                for (snapshot in dataSnapshot.children){
-                    val quizModel = snapshot.getValue(QuizModel::class.java)
-                    if (quizModel != null) {
-                        quizModelList.add(quizModel)
+                if (dataSnapshot.exists()){
+                    for (snapshot in dataSnapshot.children){
+                        val quizModel = snapshot.getValue(QuizModel::class.java)
+                        if (quizModel != null) {
+                            quizModelList.add(quizModel)
+                        }
                     }
                 }
+                setupRecyclerView()
+
             }
 
-        setupRecyclerView()
+
     }
 
 
